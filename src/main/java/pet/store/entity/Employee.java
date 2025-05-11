@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+///////////////////////////////////////////////////////////week 13 v
 @Entity
 @Data
 
@@ -24,10 +25,12 @@ public class Employee {
 	private String employeeLastName;
 	private String employeePhone;
 	private String employeeJobTitle;
-	
+
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToOne(cascade = CascadeType.ALL)	// multiple employees can be associated with a pet store
 	@JoinColumn(name = "pet_store_id")		// foreign key
 	private PetStore petStore;
+
+/////////////////////////////////////////////////////////// week 13 ^
 }

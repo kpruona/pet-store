@@ -9,9 +9,11 @@ import jakarta.persistence.ManyToMany;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
 import java.util.HashSet;
 import java.util.Set;
+
+
+/////////////////////////////////////////////////////////// Week 13 v
 @Entity	// class is a JPA entity
 @Data	// generates getters and setters
 
@@ -24,9 +26,11 @@ public class Customer {
 	private String customerFirstName;
 	private String customerLastName;
 	private String customerEmail;
-	
+
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(mappedBy = "customers", cascade = CascadeType.PERSIST)  // customers can be associated with many pet stores
 	private Set<PetStore> petStores = new HashSet<>();					// pet stores can be associated with many customers
+
+///////////////////////////////////////////////////////////// week 13^
 }
